@@ -13,3 +13,4 @@ class Usuario{
         this.time = horaInicio
     }
 }
+
