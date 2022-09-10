@@ -7,10 +7,14 @@
 //cerrar posicion y que vuelva a estar disponible.
 
 class Usuario{
-    constructor(nombre,patente,horaInicio){
+    constructor(nombre,patente,horaInicio,id,estado){
         this.name = nombre,
         this.patenta = patente,
-        this.time = horaInicio
+        this.time = horaInicio,
+        this.id = id,
+        this.estado = estado
     }
 }
+
+const posiciones = [];
 
