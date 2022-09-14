@@ -6,6 +6,7 @@
 //opcion cobrar.
 //cerrar posicion y que vuelva a estar disponible.
 
+
 class Usuario{
     constructor(nombre,patente,horaInicio,id,estado){
         this.name = nombre,
@@ -15,6 +16,22 @@ class Usuario{
         this.estado = estado
     }
 }
-
+//TODO: lo proximo
 const posiciones = [];
+
+
+function ejectPosiciones() {
+        let i = new Usuario
+        console.log(i)
+        for (i = 0; i < 15; i++) {
+            posiciones.push(i);
+            this.id = i
+            }
+            console.log(posiciones);
+            return
+        }
+ejectPosiciones()
+
+
+
 
