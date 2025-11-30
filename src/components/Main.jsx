@@ -1,5 +1,5 @@
 import { useState } from "react";
-import impresora from "../hooks/impresora";
+import impresora from "../utils/impresora";
 
 function Main() {
   const [data, setData] = useState({ nombre: "", hora: "" });
