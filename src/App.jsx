@@ -1,16 +1,17 @@
-// import Header from './components/Header'
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Botones from "./components/Buttons";
 
-import './App.css'
-import Main from './components/Main'
+import "./App.css";
 
 function App() {
-
   return (
     <>
-     {/* <Header/> */}
-    <Main/>
+      <Header />
+      <Botones/>
+      <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
