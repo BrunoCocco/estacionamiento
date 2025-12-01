@@ -11,7 +11,7 @@ function App() {
     <>
       <Header />
       <Botones setNuevoAuto={setNuevoAuto}/>
-      <Main autos={autos} />
+      <Main autos={autos} setAutos={setNuevoAuto} />
     </>
   );
 }

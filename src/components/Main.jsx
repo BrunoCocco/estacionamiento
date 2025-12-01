@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Main({ autos }) {
+function Main({ autos, setAutos }) {
   const [, setTick] = useState(0);
 
   useEffect(() => {
@@ -19,12 +19,16 @@ function Main({ autos }) {
   console.log(
     `Tiket Finalizado | Tipo: ${auto.tipo} | Duración: ${minutos.toFixed(
       1
-    )} min | Total: €${total.toFixed(2)}`
-  );
+    )} min | Total: €${total.toFixed(2)}`,
 
-  return total;
+  );
+return total;
 };
 
+ const borrarAuto = (auto) => {
+  finalizarAuto(auto),
+  setAutos((prev) => prev.filter((a) => a.id !== auto.id));
+};
   return (
     <>
       <h1>Lista de Autos</h1>
@@ -40,7 +44,7 @@ function Main({ autos }) {
             <p>
               Tiempo transcurrido: {minutos} min {segundos} s
             </p>
-            <button onClick={()=>{finalizarAuto(auto)}}>Cerrar Parking</button>
+            <button onClick={()=>{borrarAuto(auto)}}>Cerrar Parking</button>
             <hr />
           </div>
         );

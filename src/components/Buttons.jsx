@@ -28,8 +28,6 @@ function Botones({ setNuevoAuto }) {
     setPatente("");
     setTipo("");
     setMostrarModal(false);
-
-    console.log(`Nuevo Auto Guardado : ${nuevo}`);
   };
 
   return (
