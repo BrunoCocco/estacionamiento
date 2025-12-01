@@ -11,16 +11,10 @@ function Main({ autos, setAutos, setLista }) {
   const finalizarAuto = (auto) => {
     const duracionMs = Date.now() - auto.inicio;
     const minutos = duracionMs / 60000;
-
-    // tarifas
+    // 
     const tarifa = auto.tipo === "camioneta" ? 0.08 : 0.04;
     const total = minutos * tarifa;
-
-    console.log(
-      `Tiket Finalizado | Tipo: ${auto.tipo} | Duración: ${minutos.toFixed(
-        1
-      )} min | Total: €${total.toFixed(2)}`
-    );
+    
     return {
       ...auto,
       salida: new Date().toLocaleString(),
@@ -30,10 +24,11 @@ function Main({ autos, setAutos, setLista }) {
   };
 
   const borrarAuto = (auto) => {
-    const ticket = finalizarAuto(auto)
+    const ticket = finalizarAuto(auto);
     setLista((prev) => [...prev, ticket]);
     setAutos((prev) => prev.filter((a) => a.id !== auto.id));
   };
+  
   return (
     <>
       <h1>Lista de Autos</h1>

@@ -18,10 +18,6 @@ function Botones({ setNuevoAuto }) {
       tipo,
       inicio: Date.now(),
     };
-    // if (!patente || !tipo) {
-    //   alert("Por favor completa todos los campos");
-    //   return;
-    // }
 
     setNuevoAuto((prevAutos) => [...prevAutos, nuevo]);
 
@@ -79,19 +75,3 @@ function Botones({ setNuevoAuto }) {
 }
 
 export default Botones;
-
-{
-  /* <fieldset>
-  <legend>Elegí una opción:</legend>
-
-  <label>
-    <input type="radio" name="vehiculo" value="auto" />
-    Auto
-  </label>
-
-  <label>
-    <input type="radio" name="vehiculo" value="camioneta" />
-    Camioneta
-  </label>
-</fieldset> */
-}
