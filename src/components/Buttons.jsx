@@ -8,8 +8,10 @@ function Botones({ setNuevoAuto }) {
   const [patente, setPatente] = useState("");
   const [tipo, setTipo] = useState("");
 
+
   const AgregarNuevoAuto = () => {
-    
+    if (!patente || !tipo) return;
+
     const nuevo = {
       id: Date.now(),
       patente,
@@ -20,16 +22,14 @@ function Botones({ setNuevoAuto }) {
     //   alert("Por favor completa todos los campos");
     //   return;
     // }
-    
-    setNuevoAuto((prevAutos) => [...prevAutos, nuevo]); 
+
+    setNuevoAuto((prevAutos) => [...prevAutos, nuevo]);
+
     setPatente("");
     setTipo("");
     setMostrarModal(false);
-    
-    setNuevoAuto(nuevo);
-    console.log("Auto guardado:", nuevo);
-    setMostrarModal(false);
-    
+
+    console.log(`Nuevo Auto Guardado : ${nuevo}`);
   };
 
   return (
