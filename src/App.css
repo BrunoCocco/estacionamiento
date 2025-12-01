@@ -1,42 +1,162 @@
+:root {
+  --color-fondo: #f8f9fb;
+  --color-primario: #1f4e79;
+  --color-secundario: #a3c4f3;
+  --color-acento: #d94f4f;
+  --color-blanco: #ffffff;
+  --color-sombra: rgba(0, 0, 0, 0.2);
+  --transicion: 0.2s ease-in-out;
+  --fuente-base: "Poppins", sans-serif;
+}
+
+/* ===============================
+   🔹 RESET GENERAL
+   =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===============================
+   🔹 HEADER FIJO
+   =============================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px var(--color-sombra);
+  z-index: 1000;
+}
+
+/* ===============================
+   🔹 CONTENEDOR PRINCIPAL
+   =============================== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 2rem;
+}
+
+/* ===============================
+   🔹 BOTONES
+   =============================== */
+.botones-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botones-article {
+  display: flex;
+  gap: 20px;
+}
+
+.boton {
+  background: var(--color-secundario);
+  border: none;
+  border-radius: 14px;
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--transicion);
+  box-shadow: 0 3px 6px var(--color-sombra);
+}
+
+.boton img {
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+
+.boton:hover {
+  transform: scale(1.07);
+  background-color: var(--color-primario);
+  box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+.boton:active {
+  transform: scale(0.92);
+  box-shadow: inset 0 2px 6px var(--color-sombra);
+}
+
+/* ===============================
+   🔹 MODAL
+   =============================== */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: var(--color-blanco);
+  border-radius: 18px;
+  padding: 25px 35px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 6px 20px var(--color-sombra);
+  animation: aparecer 0.25s ease-out;
+}
+
+.modal h3 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.modal p {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.modal button {
+  background: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.modal button:hover {
+  background: #b83f3f;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===============================
+   🔹 ROOT GENERAL (centrado)
+   =============================== */
 #root {
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  padding-top: 5rem; /* espacio por header fijo */
 }
